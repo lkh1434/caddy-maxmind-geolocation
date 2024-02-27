@@ -239,7 +239,7 @@ func (m *MaxmindGeolocation) Match(r *http.Request) bool {
 		m.logger.Warn("cannot split IP address", zap.String("address", remoteIp), zap.Error(err))
 	}
 
-	// Get the record from the database
+	// Get the record from the databases
 	addr := net.ParseIP(remoteIp)
 	if addr == nil {
 		m.logger.Warn("cannot parse IP address", zap.String("address", remoteIp))
